@@ -122,9 +122,8 @@ nameOverride: ""
 fullnameOverride: ""
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 80
-  nodePort: 31000
 
 ingress:
   enabled: false
@@ -153,7 +152,7 @@ resources: {}
 
 ## Persist data to a persitent volume
 persistence:
-  enabled: false
+  enabled: true
   ## Name of existing persistent volume to attach
   # existingClaim: ""
 
