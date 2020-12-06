@@ -1,0 +1,334 @@
+# Default values for localstack.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+localstack:
+  #  default of hostExternal {{service.name}}.{{namespace deployed into}}
+  #  hostExternal:
+  serviceName: 'localstack'
+  port: 8080
+  edgePort: 4566
+  nodePort:  31567
+  useSsl: "false"
+  defaultRegion: "us-east-1"
+  kinesisErrorProbability: "0.0"
+  dynamodbErrorProbability: "0.0"
+  lambdaExecutor: "local"
+  services: 
+    - accessanalyzer
+    - acm
+    - acm-pca
+    - alexaforbusiness
+    - amplify
+    - amplifybackend
+    - apigateway
+    - apigatewaymanagementapi
+    - apigatewayv2
+    - appconfig
+    - appflow
+    - appintegrations
+    - application-autoscaling
+    - application-insights
+    - appmesh
+    - appstream
+    - appsync
+    - athena
+    - autoscaling
+    - autoscaling-plans
+    - backup
+    - batch
+    - braket
+    - budgets
+    - ce
+    - chime
+    - cloud9
+    - clouddirectory
+    - cloudformation
+    - cloudfront
+    - cloudhsm
+    - cloudhsmv2
+    - cloudsearch
+    - cloudsearchdomain
+    - cloudtrail
+    - cloudwatch
+    - codeartifact
+    - codebuild
+    - codecommit
+    - codeguru-reviewer
+    - codeguruprofiler
+    - codepipeline
+    - codestar
+    - codestar-connections
+    - codestar-notifications
+    - cognito-identity
+    - cognito-idp
+    - cognito-sync
+    - comprehend
+    - comprehendmedical
+    - compute-optimizer
+    - configservice
+    - configure
+    - connect
+    - connect-contact-lens
+    - connectparticipant
+    - cur
+    - customer-profiles
+    - databrew
+    - dataexchange
+    - datapipeline
+    - datasync
+    - dax
+    - deploy
+    - detective
+    - devicefarm
+    - devops-guru
+    - directconnect
+    - discovery
+    - dlm
+    - dms
+    - docdb
+    - ds
+    - dynamodb
+    - dynamodbstreams
+    - ebs
+    - ec2
+    - ec2-instance-connect
+    - ecr
+    - ecr-public
+    - ecs
+    - efs
+    - eks
+    - elastic-inference
+    - elasticache
+    - elasticbeanstalk
+    - elastictranscoder
+    - elb
+    - elbv2
+    - emr
+    - es
+    - events
+    - firehose
+    - fms
+    - forecast
+    - forecastquery
+    - frauddetector
+    - fsx
+    - gamelift
+    - glacier
+    - globalaccelerator
+    - glue
+    - greengrass
+    - groundstation
+    - guardduty
+    - health
+    - history
+    - honeycode
+    - iam
+    - identitystore
+    - imagebuilder
+    - importexport
+    - inspector
+    - iot
+    - iot-data
+    - iot-jobs-data
+    - iot1click-devices
+    - iot1click-projects
+    - iotanalytics
+    - iotevents
+    - iotevents-data
+    - iotsecuretunneling
+    - iotsitewise
+    - iotthingsgraph
+    - ivs
+    - kafka
+    - kendra
+    - kinesis
+    - kinesis-video-archived-media
+    - kinesis-video-media
+    - kinesis-video-signaling
+    - kinesisanalytics
+    - kinesisanalyticsv2
+    - kinesisvideo
+    - kms
+    - lakeformation
+    - lambda
+    - lex-models
+    - lex-runtime
+    - license-manager
+    - lightsail
+    - logs
+    - lookoutvision
+    - machinelearning
+    - macie
+    - macie2
+    - managedblockchain
+    - marketplace-catalog
+    - marketplace-entitlement
+    - marketplacecommerceanalytics
+    - mediaconnect
+    - mediaconvert
+    - medialive
+    - mediapackage
+    - mediapackage-vod
+    - mediastore
+    - mediastore-data
+    - mediatailor
+    - meteringmarketplace
+    - mgh
+    - migrationhub-config
+    - mobile
+    - mq
+    - mturk
+    - mwaa
+    - neptune
+    - network-firewall
+    - networkmanager
+    - opsworks
+    - opsworks-cm
+    - organizations
+    - outposts
+    - personalize
+    - personalize-events
+    - personalize-runtime
+    - pi
+    - pinpoint
+    - pinpoint-email
+    - pinpoint-sms-voice
+    - polly
+    - pricing
+    - qldb
+    - qldb-session
+    - quicksight
+    - ram
+    - rds
+    - rds-data
+    - redshift
+    - redshift-data
+    - rekognition
+    - resource-groups
+    - resourcegroupstaggingapi
+    - robomaker
+    - route53
+    - route53domains
+    - route53resolver
+    - s3
+    - s3api
+    - s3control
+    - s3outposts
+    - sagemaker
+    - sagemaker-a2i-runtime
+    - sagemaker-featurestore-runtime
+    - sagemaker-runtime
+    - savingsplans
+    - schemas
+    - sdb
+    - secretsmanager
+    - securityhub
+    - serverlessrepo
+    - service-quotas
+    - servicecatalog
+    - servicecatalog-appregistry
+    - servicediscovery
+    - ses
+    - sesv2
+    - shield
+    - signer
+    - sms
+    - snowball
+    - sns
+    - sqs
+    - ssm
+    - sso
+    - sso-admin
+    - sso-oidc
+    - stepfunctions
+    - storagegateway
+    - sts
+    - support
+    - swf
+    - synthetics
+    - textract
+    - timestream-query
+    - timestream-write
+    - transcribe
+    - transfer
+    - translate
+    - waf
+    - waf-regional
+    - wafv2
+    - workdocs
+    - worklink
+    - workmail
+    - workmailmessageflow
+    - workspaces
+    - xray
+  
+   
+
+
+replicaCount: 1
+
+image:
+  repository: localstack/localstack
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 31000
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  paths: []
+  hosts:
+    - localstack.local
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+## Persist data to a persitent volume
+persistence:
+  enabled: false
+  ## Name of existing persistent volume to attach
+  # existingClaim: ""
+
+  ##  Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+
+  ## Persistent Volume Access Mode.
+  accessMode: ReadWriteOnce
+
+  ## Persistent Volume Storage Size.
+  size: 8Gi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
